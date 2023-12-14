@@ -1,34 +1,34 @@
 <x-action-section>
     <x-slot name="title">
-        {{ __('Delete Account') }}
+        {{ __('Usuń konto') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Permanently delete your account.') }}
+        {{ __('Trwale usuń swoje konto.') }}
     </x-slot>
 
     <x-slot name="content">
         <div>
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+            {{ __('Po usunięciu Twojego konta wszystkie jego zasoby i dane zostaną trwale usunięte. Przed usunięciem konta pobierz wszelkie dane i informacje, które chcesz zachować.') }}
         </div>
 
         <div class="mt-3">
             <x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
-                {{ __('Delete Account') }}
+                {{ __('Usuń konto') }}
             </x-danger-button>
         </div>
 
         <!-- Delete User Confirmation Modal -->
         <x-dialog-modal wire:model="confirmingUserDeletion">
             <x-slot name="title">
-                {{ __('Delete Account') }}
+                {{ __('Usuń konto') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                {{ __('Czy jesteś pewien, że chcesz usunąć swoje konto? Pamiętaj, że tej operacji nie można cofnąć. Wprowadź swoje hasło aby usunąc trwale swoje konto.') }}
 
                 <div class="mt-2 w-md-75" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Password') }}"
+                    <x-input type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Wprowadź hasło') }}"
                                  x-ref="password"
                                  wire:model.defer="password"
                                  wire:keydown.enter="deleteUser" />
@@ -40,15 +40,15 @@
             <x-slot name="footer">
                 <x-secondary-button wire:click="$toggle('confirmingUserDeletion')"
                                         wire:loading.attr="disabled">
-                    {{ __('Cancel') }}
+                    {{ __('Anuluj') }}
                 </x-secondary-button>
 
                 <x-danger-button wire:click="deleteUser" wire:loading.attr="disabled">
                     <div wire:loading wire:target="deleteUser" class="spinner-border spinner-border-sm" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                        <span class="visually-hidden">Ładowanie ...</span>
                     </div>
 
-                    {{ __('Delete Account') }}
+                    {{ __('Usuń konto') }}
                 </x-danger-button>
             </x-slot>
         </x-dialog-modal>
@@ -59,37 +59,37 @@
 
 {{-- <x-action-section>
     <x-slot name="title">
-        {{ __('Delete Account') }}
+        {{ __('Usuń konto') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Permanently delete your account.') }}
+        {{ __('Trwale usuń swoje konto.') }}
     </x-slot>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+            {{ __('Po usunięciu Twojego konta wszystkie jego zasoby i dane zostaną trwale usunięte. Przed usunięciem konta pobierz wszelkie dane i informacje, które chcesz zachować.') }}
         </div>
 
         <div class="mt-5">
             <x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
-                {{ __('Delete Account') }}
+                {{ __('Usuń konto') }}
             </x-danger-button>
         </div>
 
         <!-- Delete User Confirmation Modal -->
         <x-dialog-modal wire:model="confirmingUserDeletion">
             <x-slot name="title">
-                {{ __('Delete Account') }}
+                {{ __('Usuń konto') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                {{ __('Czy jesteś pewien, że chcesz usunąć swoje konto? Pamiętaj, że tej operacji nie można cofnąć. Wprowadź swoje hasło aby usunąc trwale swoje konto.') }}
 
                 <div class="mt-4" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-input type="password" class="mt-1 block w-3/4"
                                 autocomplete="current-password"
-                                placeholder="{{ __('Password') }}"
+                                placeholder="{{ __('Wprowadź hasło') }}"
                                 x-ref="password"
                                 wire:model.defer="password"
                                 wire:keydown.enter="deleteUser" />
@@ -100,11 +100,11 @@
 
             <x-slot name="footer">
                 <x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
-                    {{ __('Cancel') }}
+                    {{ __('Anuluj') }}
                 </x-secondary-button>
 
                 <x-danger-button class="ml-3" wire:click="deleteUser" wire:loading.attr="disabled">
-                    {{ __('Delete Account') }}
+                    {{ __('Usuń konto') }}
                 </x-danger-button>
             </x-slot>
         </x-dialog-modal>

@@ -7,6 +7,6 @@
      style="display: none;"
         {{ $attributes->merge(['class' => 'small']) }}>
     <div class="alert-body">
-        {{ $slot->isEmpty() ? 'Saved.' : $slot }}
+        {{ $slot->isEmpty() ? 'Zapisano.' : $slot }}
     </div>
 </div>

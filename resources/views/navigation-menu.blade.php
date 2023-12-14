@@ -13,7 +13,22 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                <i class="fas fa-house"></i> {{ __('Panel Pracownika') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                <i class="fas fa-file-invoice-dollar"></i> {{ __('Zawiadomienia') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                <i class="fas fa-square-parking"></i> {{ __('Abonamenty') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                <i class="fas fa-gavel"></i> {{ __('Egzekucje') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                <i class="fas fa-chart-pie"></i> {{ __('Raporty') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                <i class="fas fa-sliders"></i> {{ __('Ustawienia SPP') }}
                 </x-nav-link>
             </ul>
 
@@ -67,7 +82,7 @@
                         <svg class="bi my-1 theme-icon-active opacity-75 lightDarkSvg" height="16" width="16">
                             <use href="#circle-half"></use>
                         </svg>
-                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                        <span class="d-lg-none ms-2" id="bd-theme-text">Tryb kolorów</span>
                     </button>
                     <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="bd-theme-text">
                         <li>
@@ -75,7 +90,7 @@
                                 <svg class="bi me-2 opacity-50 theme-icon" height="16" width="16">
                                     <use href="#sun-fill"></use>
                                 </svg>
-                                Light
+                                Jasny
                             </button>
                         </li>
                         <li>
@@ -83,7 +98,7 @@
                                 <svg class="bi me-2 opacity-50 theme-icon" height="16" width="16">
                                     <use href="#moon-stars-fill"></use>
                                 </svg>
-                                Dark
+                                Ciemny
                             </button>
                         </li>
                         <li>
@@ -91,7 +106,7 @@
                                 <svg class="bi me-2 opacity-50 theme-icon" height="16" width="16">
                                     <use href="#circle-half"></use>
                                 </svg>
-                                Auto
+                                Automatyczny
                             </button>
                         </li>
                     </ul>
@@ -115,11 +130,19 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <h6 class="dropdown-header small text-muted">
-                                {{ __('Manage Account') }}
+                                Witaj {{ Auth::user()->name }} 👋
                             </h6>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                            <i class="fas fa-user"></i> {{ __('Profil') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link class="text-warning">
+                            <i class="fas fa-lock"></i> {{ __('Administracja') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link href="https://assistance.sonija.pl/" target="_blank">
+                            <i class="far fa-life-ring"></i> {{ __('Uzyskaj wsparcie') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -133,8 +156,8 @@
                             <!-- Authentication -->
                             <x-dropdown-link href="{{ route('logout') }}"
                                                  onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                {{ __('Log out') }}
+                                                         document.getElementById('logout-form').submit();" class="text-danger text-bold">
+                                <i class="fas fa-arrow-right-from-bracket"></i> {{ __('Wyloguj się') }}
                             </x-dropdown-link>
                             <form method="POST" id="logout-form" action="{{ route('logout') }}">
                                 @csrf

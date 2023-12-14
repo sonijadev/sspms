@@ -16,31 +16,31 @@
             @csrf
 
             <div>
-                <x-label for="email" value="{{ __('Email') }}" />
+                <x-label for="email" value="{{ __('Adres e-mail') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Hasło') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Zapamiętaj mnie') }}</span>
                 </label>
             </div>
 
             <div class="d-flex algin-items-center justify-content-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Nie pamiętam swojego hasła.') }}
                     </a>
                 @endif
 
                 <x-button class="ml-4">
-                    {{ __('Log in') }}
+                    {{ __('Zaloguj się') }}
                 </x-button>
             </div>
         </form>
@@ -67,7 +67,7 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="mb-3">
-                    <x-label value="{{ __('Email') }}" />
+                    <x-label value="{{ __('Adres e-mail') }}" />
 
                     <x-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
                                  name="email" :value="old('email')" required />
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-label value="{{ __('Password') }}" />
+                    <x-label value="{{ __('Hasło') }}" />
 
                     <x-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="current-password" />
@@ -86,7 +86,7 @@
                     <div class="custom-control custom-checkbox">
                         <x-checkbox id="remember_me" name="remember" />
                         <label class="custom-control-label" for="remember_me">
-                            {{ __('Remember Me') }}
+                            {{ __('Zapamiętaj mnie') }}
                         </label>
                     </div>
                 </div>
@@ -95,12 +95,12 @@
                     <div class="d-flex justify-content-end align-items-baseline">
                         @if (Route::has('password.request'))
                             <a class="text-muted me-3" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('Nie pamiętam swojego hasła.') }}
                             </a>
                         @endif
 
                         <x-button>
-                            {{ __('Log in') }}
+                            {{ __('Zaloguj się') }}
                         </x-button>
                     </div>
                 </div>

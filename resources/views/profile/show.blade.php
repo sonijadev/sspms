@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 fw-bold">
-            {{ __('Profile') }}
+            {{ __('Konto użytkownika') }}
         </h2>
     </x-slot>
     <div>

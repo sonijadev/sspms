@@ -1,7 +1,7 @@
 <div class="row justify-content-center my-5 mx-md-3">
     <div class="col-md-12">
-        <div class="container welcomeContainerTop shadow-lg rounded-3">
-            <div class="row p-3 rounded-top-3 border-bottom">
+        <div class="container welcomeContainerTop shadow rounded-3">
+            <div class="row p-3 border-top border-4 border-primary">
                 <div class="m-2">
                     <div class="row">
                         <div class="col-md-12 d-flex align-items-center">
@@ -10,16 +10,18 @@
                     </div>
 
                     <h3 class="h3 my-4">
-                        Welcome to your BootsJet application!
+                        Witaj w Sonija Select!
                     </h3>
 
                     <div class="text-muted">
-                        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel ecosystem to be a breath of fresh air. We hope you love it.
+                        Aplikacja stworzona z myślą o łatwym, przyjemnym i spersonalizowanym zarządzaniu strefą płatnego parkowania w Twoim mieście.
+                        Wybierz co chcesz zrobić, zinwentaryzować abonamenty, opłacić zawiadomienie, zmienić ustawienia kontroli? Wszystko prosto i wygodnie zrobisz w jednej aplikacji.<br>
+                        Mamy nadzieję, że Twoja praca będzie przebiegać pomyślnie i bez zbędnych problemów, w razie potrzeby służymy Ci pomocą, a teraz - Miłego dnia !
                     </div>
                 </div>
             </div>
             
-            <div class="row p-3 welcomeContainerBottom">
+            <div class="row p-3 welcomeContainerBottom border-top">
                 {{-- <div class="col-md-6 pe-2">
                     <div class="container p-3 h-100">
                         <div class="d-flex flex-row bd-highlight mb-3">
@@ -135,11 +137,5 @@
 
             </div>
         </div>
-    </div>
-</div>
-
-<div class="row mx-md-3">
-    <div class="col-md-12 fs-6 text-end">
-        Laravel v{{ Illuminate\Foundation\Application::VERSION }} <br> PHP v{{ PHP_VERSION }} <br>
     </div>
 </div>

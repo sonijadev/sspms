@@ -1,4 +1,4 @@
-@props(['title' => __('Confirm Password'), 'content' => __('For your security, please confirm your password to continue.'), 'button' => __('Confirm')])
+@props(['title' => __('Potwierdź hasło'), 'content' => __('Dla Twojego bezpieczeństwa, wpisz swoje hasło w celu potwierdzenia.'), 'button' => __('Potwierdź')])
 
 @php
     $confirmableId = md5($attributes->wire('then'));
@@ -24,7 +24,7 @@
         {{ $content }}
 
         <div class="mt-4" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-input type="password" class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}" placeholder="{{ __('Password') }}"
+            <x-input type="password" class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}" placeholder="{{ __('Twoje hasło') }}"
                          x-ref="confirmable_password"
                          wire:model.defer="confirmablePassword"
                          wire:keydown.enter="confirmPassword" />
@@ -35,12 +35,12 @@
 
     <x-slot name="footer">
         <x-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
-            {{ __('Cancel') }}
+            {{ __('Anuluj') }}
         </x-secondary-button>
 
         <x-button class="ms-2" wire:click="confirmPassword" wire:loading.attr="disabled">
             <div wire:loading wire:target="confirmPassword" class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Ładowanie ...</span>
             </div>
 
             {{ $button }}
